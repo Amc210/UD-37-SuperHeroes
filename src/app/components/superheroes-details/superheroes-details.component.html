@@ -1,0 +1,29 @@
+<div>
+    <div *ngIf="currentSuperheroes.id" class="edit-form">
+        <h4>Book</h4>
+        <form>
+            <div class="form-group">
+                <label for="name">name</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="currentSuperheroes.name" name="name" />
+            </div>
+            <div class="form-group">
+                <label for="short_name">short_name</label>
+                <input type="text" class="form-control" id="short_name" [(ngModel)]="currentSuperheroes.short_name" name="short_name" />
+            </div>
+
+            <div class="form-group">
+                <label><strong>Alt_name:</strong></label> {{ currentSuperheroes.alt_name }}
+            </div>
+        </form>
+
+        <button class="badge badge-danger mr-2" (click)="deleteSuperheroes()">    Delete    </button>
+
+        <button type="submit" class="badge badge-success mb-2" (click)="updateSuperheroes()">   Update    </button>
+        <p>{{ message }}</p>
+    </div>
+
+    <div *ngIf="!currentSuperheroes.id">
+        <br />
+        <p>Cannot access this Book...</p>
+    </div>
+</div>

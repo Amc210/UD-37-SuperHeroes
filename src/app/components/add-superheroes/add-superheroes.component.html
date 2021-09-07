@@ -1,0 +1,25 @@
+<div>
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" required [(ngModel)]="superheroes.name" name="name" />
+            </div>
+
+            <div class="form-group">
+                <label for="short_name">Short_name</label>
+                <input class="form-control" id="short_name" required [(ngModel)]="superheroes.short_name" name="short_name" />
+            </div>
+            <div class="form-group">
+              <label for="alt_name">Alt_name</label>
+              <input class="form-control" id="alt_name" required [(ngModel)]="superheroes.alt_name" name="alt_name" />
+          </div>
+            <button (click)="saveSuperheroes()" class="btn btn-success">Submit</button>
+        </div>
+
+        <div *ngIf="submitted">
+            <h4>Tutorial was submitted successfully!</h4>
+            <button class="btn btn-success" (click)="newSuperheroes()">Add</button>
+        </div>
+    </div>
+</div>
